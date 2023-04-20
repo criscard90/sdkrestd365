@@ -1,4 +1,3 @@
-"use strict";
 var Sdk = window.Sdk || {};
 
 /**
