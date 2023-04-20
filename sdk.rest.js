@@ -58,7 +58,7 @@ Sdk.versionManager = new function () {
         }
     })
 
-}
+};
 
 Sdk.retrieveVersion = function () {
     return new Promise(function (resolve, reject) {
@@ -333,6 +333,7 @@ Sdk.executeRetrieveAdmin = function (entity, options, hideError) {
     },true);
     return res;
 };
+
 Sdk.executeBoundAction = function (entityName, entityId, actionName, data, hideError, useAdmin) {
         var res;
         Sdk.requestV9("POST", "/" + entityName + "(" + entityId.replace('{', '').replace('}', '') + ")/Microsoft.Dynamics.CRM." + actionName, false, data, null,
@@ -353,7 +354,8 @@ Sdk.executeBoundAction = function (entityName, entityId, actionName, data, hideE
             useAdmin
         );
         return res;
-    }
+    };
+
 Sdk.executeUnboundAction = function (actionName, data, hideError) {
     var res;
     Sdk.requestV9("POST", "/" + actionName, false, data, null,
@@ -372,7 +374,8 @@ Sdk.executeUnboundAction = function (actionName, data, hideError) {
             res = result;
         });
     return res;
-}
+};
+
 Sdk.executeDisassociate = function (entity1, entity1Id, relationshipName, entity2Id, hideError) {
     var res;
     Sdk.requestV9("DELETE", "/" + entity1 + "(" + entity1Id + ")/" + relationshipName + "(" + entity2Id + ")/$ref", false, data, null,
@@ -391,7 +394,7 @@ Sdk.executeDisassociate = function (entity1, entity1Id, relationshipName, entity
             res = result;
         });
     return res;
-}
+};
 
 Sdk.executeAssassociate = function (entity1, entity1Id, relationshipName, entity2Id) {
    var res;
@@ -409,4 +412,4 @@ Sdk.executeAssassociate = function (entity1, entity1Id, relationshipName, entity
            res = result;
        });
    return res;
-}
+};
