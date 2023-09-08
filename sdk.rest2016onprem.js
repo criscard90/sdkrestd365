@@ -190,7 +190,7 @@ Sdk.clearErrorMessage = function ()
 Sdk.executeFetch = function (entity, fetchXML, hideError) {
     var res;
 
-    var url = Sdk.getClientUrl() + "/api/data/v9.0/" + entity + "?fetchXml=" + fetchXML;
+    var url = Sdk.getClientUrl() + "/api/data/v8.2/" + entity + "?fetchXml=" + fetchXML;
     Sdk.requestV9("GET", url, false, null, null, function (result) {
         var returned = JSON.parse(result.responseText);
         res = returned.value;
@@ -207,7 +207,7 @@ Sdk.executeFetch = function (entity, fetchXML, hideError) {
 Sdk.executeFetchAdmin = function (entity, fetchXML, hideError) {
     var res;
 
-    var url = Sdk.getClientUrl() + "/api/data/v9.0/" + entity + "?fetchXml=" + fetchXML;
+    var url = Sdk.getClientUrl() + "/api/data/v8.2/" + entity + "?fetchXml=" + fetchXML;
     Sdk.requestV9("GET", url, false, null, null, function (result) {
         var returned = JSON.parse(result.responseText);
         res = returned.value;
@@ -224,7 +224,7 @@ Sdk.executeFetchAdmin = function (entity, fetchXML, hideError) {
 Sdk.executeRetrieveByGuid = function (entity, guid, options, hideError) {
     var res;
 
-    var url = Sdk.getClientUrl() + "/api/data/v9.0/" + entity + "(" + guid.replace('{', '').replace('}', '') + ")" + options;
+    var url = Sdk.getClientUrl() + "/api/data/v8.2/" + entity + "(" + guid.replace('{', '').replace('}', '') + ")" + options;
     Sdk.requestV9("GET", url, false, null, null, function (result) {
         res = JSON.parse(result.responseText);
         res.executionSucceded = true;
@@ -239,7 +239,7 @@ Sdk.executeRetrieveByGuid = function (entity, guid, options, hideError) {
 };
 Sdk.executeUpdate = function (entity, guid, data, hideError) {
     var res = {};
-    var url = Sdk.getClientUrl() + "/api/data/v9.0/" + entity + "(" + guid.replace('{', '').replace('}', '') + ")";
+    var url = Sdk.getClientUrl() + "/api/data/v8.2/" + entity + "(" + guid.replace('{', '').replace('}', '') + ")";
     Sdk.requestV9("PATCH", url, false, data, null, function (result) {
         //res = JSON.parse(result.responseText);
         res.executionSucceded = true;
@@ -254,7 +254,7 @@ Sdk.executeUpdate = function (entity, guid, data, hideError) {
 };
 Sdk.executeUpdateAdmin = function (entity, guid, data, hideError) {
     var res = {};
-    var url = Sdk.getClientUrl() + "/api/data/v9.0/" + entity + "(" + guid.replace('{', '').replace('}', '') + ")";
+    var url = Sdk.getClientUrl() + "/api/data/v8.2/" + entity + "(" + guid.replace('{', '').replace('}', '') + ")";
     Sdk.requestV9("PATCH", url, false, data, null, function (result) {
         //res = JSON.parse(result.responseText);
         res.executionSucceded = true;
@@ -269,7 +269,7 @@ Sdk.executeUpdateAdmin = function (entity, guid, data, hideError) {
 };
 Sdk.executeCreate = function (entity, data, hideError) {
     var res = {};
-    var url = Sdk.getClientUrl() + "/api/data/v9.0/" + entity;
+    var url = Sdk.getClientUrl() + "/api/data/v8.2/" + entity;
     Sdk.requestV9("POST", url, false, data, null, function (result) {
         //res = JSON.parse(result.responseText);
         res.executionSucceded = true;
@@ -284,7 +284,7 @@ Sdk.executeCreate = function (entity, data, hideError) {
 };
 Sdk.executeCreateAdmin = function (entity, data, hideError) {
     var res = {};
-    var url = Sdk.getClientUrl() + "/api/data/v9.0/" + entity;
+    var url = Sdk.getClientUrl() + "/api/data/v8.2/" + entity;
     Sdk.requestV9("POST", url, false, data, null, function (result) {
         //res = JSON.parse(result.responseText);
         res.executionSucceded = true;
@@ -300,7 +300,7 @@ Sdk.executeCreateAdmin = function (entity, data, hideError) {
 Sdk.executeRetrieve = function (entity, options, hideError) {
     var res;
 
-    var url = Sdk.getClientUrl() + "/api/data/v9.0/" + entity + options;
+    var url = Sdk.getClientUrl() + "/api/data/v8.2/" + entity + options;
     Sdk.requestV9("GET", url, false, null, null, function (result) {
         var returned = JSON.parse(result.responseText);
         res = returned.value;
@@ -317,7 +317,7 @@ Sdk.executeRetrieve = function (entity, options, hideError) {
 Sdk.executeRetrieveAdmin = function (entity, options, hideError) {
     var res;
 
-    var url = Sdk.getClientUrl() + "/api/data/v9.0/" + entity + options;
+    var url = Sdk.getClientUrl() + "/api/data/v8.2/" + entity + options;
     Sdk.requestV9("GET", url, false, null, null, function (result) {
         var returned = JSON.parse(result.responseText);
         res = returned.value;
